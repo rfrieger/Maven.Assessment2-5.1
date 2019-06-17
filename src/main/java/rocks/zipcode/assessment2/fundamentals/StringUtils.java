@@ -53,7 +53,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        String[] strings = string.split("");
+        String[] strings = string.split(" ");
 
         char c=' ';
         boolean isCorrect=false, allLetters=isCorrect;
@@ -61,11 +61,10 @@ public class StringUtils {
         for (int j = 0; j <strings.length ; j++) {
             for (int i = 0; i < strings[j].length(); i++) {
                 c = strings[j].charAt(i);
-                if (!Character.isAlphabetic(c))
+                if (!Character.isLetter(c))
                     failCount += 1;
             }
         }
-        System.out.println(failCount);
         if(failCount == 0) {
             return true;
         } else

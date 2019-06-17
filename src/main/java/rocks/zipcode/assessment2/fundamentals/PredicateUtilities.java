@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+
+import java.util.Calendar;
+
 public class PredicateUtilities {
     /**
      * @param value - the value to be evaluated
@@ -52,8 +55,9 @@ public class PredicateUtilities {
      * @return true if `string` starts with a capital letter
      */
     public static Boolean startsWithCapitalLetter(String string) {
+        Character first = string.charAt(0);
 
-        if (string.toUpperCase().charAt(0) == string.charAt(0)) {
+        if (string.toUpperCase().charAt(0) == string.charAt(0) && Character.isLetter(first)) {
             return true;
         }else return false;
     }
