@@ -34,12 +34,14 @@ public class MonthConversion {
      */
     public int getNumber(String monthName) {
         int index = 0;
-        for (Integer i : map.keySet()) {
-            if (map.get(i).equals(monthName)){
-                index = i;
+        if(isValidMonth(monthName)) {
+            for (Integer i : map.keySet()) {
+                if (map.get(i).equals(monthName)) {
+                    index = i;
+                }
             }
-        }
-        return index;
+            return index;
+        }else return (Integer)null;
         //return (Integer)null;
     }
 

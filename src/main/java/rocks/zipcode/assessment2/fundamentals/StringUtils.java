@@ -56,7 +56,7 @@ public class StringUtils {
         String[] strings = string.split("");
 
         char c=' ';
-        boolean isGood=false, allLetters=isGood;
+        boolean isCorrect=false, allLetters=isCorrect;
         int failCount=0;
         for (int j = 0; j <strings.length ; j++) {
             for (int i = 0; i < strings[j].length(); i++) {
@@ -65,6 +65,7 @@ public class StringUtils {
                     failCount += 1;
             }
         }
+        System.out.println(failCount);
         if(failCount == 0) {
             return true;
         } else
@@ -78,7 +79,7 @@ public class StringUtils {
     public static Boolean isNumericString(String string) {
         String[] strings = string.split("");
         char c=' ';
-        boolean isGood=false, allLetters=isGood;
+        boolean isCorrect=false, allLetters=isCorrect;
         int failCount=0;
         for (int j = 0; j <strings.length ; j++) {
             for (int i = 0; i < strings[j].length(); i++) {
@@ -101,7 +102,7 @@ public class StringUtils {
     public static Boolean isSpecialCharacterString(String string) {
         String[] strings = string.split("");
         char c=' ';
-        boolean isGood=false, allLetters=isGood;
+        boolean isCorrect=false, allLetters=isCorrect;
         int failCount=0;
         for (int j = 0; j <strings.length ; j++) {
             for (int i = 0; i < strings[j].length(); i++) {
