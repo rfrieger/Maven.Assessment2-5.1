@@ -1,15 +1,20 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+
 /**
  * Use a map to solve
  */
 public class MonthConversion {
+
+    HashMap<Integer , String > map = new HashMap<Integer, String>();
+
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
     public void add(Integer monthNumber, String monthName) {
-
+        map.put(monthNumber,monthName);
     }
 
     /**
@@ -17,7 +22,10 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+
+        return map.get(monthNumber);
+
+        //throw new NullPointerException();
     }
 
     /**
@@ -25,7 +33,14 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        return (Integer)null;
+        int index = 0;
+        for (Integer i : map.keySet()) {
+            if (map.get(i).equals(monthName)){
+                index = i;
+            }
+        }
+        return index;
+        //return (Integer)null;
     }
 
     /**
@@ -33,7 +48,13 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        Boolean isValid = false;
+        for (Integer i : map.keySet()) {
+            if (i.equals(monthNumber)){
+                isValid = true;
+            }
+        }
+        return isValid;
     }
 
     /**
@@ -41,14 +62,20 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+        Boolean isValid = false;
+        for (Integer i : map.keySet()) {
+            if (map.get(i).equals(monthName)){
+                isValid = true;
+            }
+        }
+        return isValid;
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+       return map.size();
     }
 
     /**
@@ -56,6 +83,7 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
+        map.replace(monthNumber,monthName);
 
     }
 }
