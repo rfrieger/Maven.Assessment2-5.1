@@ -74,10 +74,15 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-
     @Override
     public String toString() {
-        return "Address{addressLine1='"+this.addressline1+"', "+"addressLine2='"+this.addressline2+"', "+"city='"+this.city+"', "+"state='"+this.state+"', "+"zipcode='"+this.zipcode+"'}";
+        return "Address{" +
+                "addressLine1='" + addressline1 + '\'' +
+                ", addressLine2='" + addressline2 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
     }
 
     // @Override
