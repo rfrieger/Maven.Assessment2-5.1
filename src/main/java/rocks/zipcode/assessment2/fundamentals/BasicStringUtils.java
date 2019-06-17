@@ -7,15 +7,18 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     /**
      * @param string1 - String to be reversed
      * @return an identical string with characters in reverse order
      */
-    public static String reverse(String string1) {
-        return null;
+    public static String reverse(String string1) { String reverseString ="";
+        for (int i = string1.length() -1; i >= 0 ; i--) {
+            reverseString +=  string1.charAt(i);
+        }
+        return reverseString;
     }
 
     /**
@@ -24,7 +27,9 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        string1 = reverse(string1);
+        string2 = reverse(string2);
+        return concatentate(string1,string2);
     }
 
     /**
@@ -33,7 +38,23 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+
+        String[] stringArr = string.split("");
+        String[] charToRemoveString = charactersToRemove.split("");
+        String returnString = "";
+        for (int i = 0; i <stringArr.length  ; i++) {
+            boolean add= true;
+            for (int j = 0; j <charToRemoveString.length ; j++) {
+                if(stringArr[i].equals(charToRemoveString[j])){
+                add = false;}
+            }
+           if (add) {
+               returnString+= stringArr[i];
+           }
+           add = true;
+        }
+
+        return returnString;
     }
 
     /**
@@ -42,6 +63,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        return reverse(removeCharacters(string, charactersToRemove));
     }
 }
