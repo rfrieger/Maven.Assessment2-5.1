@@ -11,10 +11,11 @@ import java.security.acl.Owner;
  */
 public class Animal {
     Person owner;
-    long id ;
+    Long id;
 
     public Animal() {
-        this.owner = new Person(null,null, new Address());
+        this.owner = new Person();
+        this.id =null;
     }
 
 
